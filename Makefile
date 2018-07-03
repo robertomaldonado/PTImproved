@@ -4,15 +4,18 @@
 
 # Declare CC
 CC=g++ -std=c++11 
-CFLAGS = -O2#-Wall
+CFLAGS = -Wall
 #Declare processes
 all: generateFiles compile
 #Create .o files
 generateFiles: 
-	$(CC) $(CFLAGS) -c main.cpp TextParser.cpp Analyzer.cpp FileHandler.cpp
+	$(CC) $(CFLAGS) -c main.cpp -o main.o
+	$(CC) $(CFLAGS) -c TextParser.cpp -o TextParser.o
+	$(CC) $(CFLAGS) -c Analyzer.cpp -o Analyzer.o
+	$(CC) $(CFLAGS) -c FileHandler.cpp -o FileHandler.o
 #Link to executable
 compile: main.o TextParser.o Analyzer.o FileHandler.o
-	$(CC) $(CFLAGS) main.o TextParser.o Analyzer.o FileHandler.o -o executable
+	$(CC)  main.o TextParser.o Analyzer.o FileHandler.o -o executable
 #Clean directoty
 clean:
 	rm *.o executable
