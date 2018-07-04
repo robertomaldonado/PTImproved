@@ -19,3 +19,15 @@ compile: main.o TextParser.o Analyzer.o FileHandler.o
 #Clean directoty
 clean:
 	rm *.o executable
+clean_files:
+	rm files/default_?.txtplot_averages.txt
+	rm files/default_?.txtplot_greeting.txt
+	rm files/default_?.txtplot_mayus.txt
+	rm files/default_?.txtplot_minus.txt
+	rm files/default_?.txtplot_numbers.txt
+	rm files/default_?.txtplot_tildes.txt
+	rm files/default_?.txtplot_totales.txt
+	rm files/default_?.txtplot.txt
+	
+
+
